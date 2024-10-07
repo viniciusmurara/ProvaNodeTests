@@ -18,3 +18,27 @@
  *
  * Observação: Apenas as vogais (a, e, i, o, u) devem ser consideradas.
  */
+
+function contarVogais(string){
+    const objeto = {};
+    string = string.toLowerCase();
+    
+    for(let i = 0; i < string.length; i++){
+        if(string[i] === "a" || string[i] === "e" || string[i] === "i" || string[i] === "o" || string[i] === "u"){
+            if (objeto.hasOwnProperty(string[i])) {
+                objeto[string[i]]++;
+            } else {
+                objeto[string[i]] = 1;
+            }
+        }
+    }
+
+    for(let i = 0; i < string.length; i++){
+        if(objeto[string[i]] == 1){
+            delete objeto[string[i]];
+        }
+    }
+    return objeto;
+}
+
+module.exports = contarVogais;

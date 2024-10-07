@@ -24,3 +24,41 @@
  * };
  *
  */
+
+function manipularArrayPalavras(palavras){
+    // a) e b)
+    copiaArray = [];
+    palavras.forEach(element => {
+        copiaArray.push(element.toUpperCase());
+    });
+
+    // c)
+    copiaArray.unshift("INÍCIO");
+
+    // d)
+    copiaArray.push("FIM");
+
+    // e)
+    let palavraMaisLonga = "";
+    let maiorQntdLetras = 0;
+    copiaArray.forEach(element => {
+        if(element.length > maiorQntdLetras){
+            maiorQntdLetras = element.length;
+            palavraMaisLonga = element;
+        }
+    });
+
+    // f)
+    let palavrasComA = copiaArray.filter(element => {
+        return element[0] === "A";
+    })
+
+    return {
+       arrayOriginal: palavras,
+       arrayCopia: copiaArray,
+       palavraMaisLonga: palavraMaisLonga,
+       palavrasComA: palavrasComA
+    };
+}
+
+module.exports = manipularArrayPalavras;

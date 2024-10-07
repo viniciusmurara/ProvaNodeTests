@@ -13,3 +13,4 @@
  * const resultado = unirArrays([1, 2, 3, 4], [3, 4, 5, 6]);
  * console.log(resultado); // Deve imprimir: [1, 2, 3, 4, 5, 6]
  */
+

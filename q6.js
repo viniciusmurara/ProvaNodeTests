@@ -20,3 +20,35 @@
  *
  * Retorne o objeto carro completo ao final da função.
  */
+
+function manipulacaoCarro(){
+    // a)
+    let carro = {
+        marca: "Toyota",
+        modelo: "Corolla",
+        anoFabricacao: 2010
+    };
+
+    // b)
+    console.log(carro.modelo);
+
+    // c)
+    carro.anoFabricacao = 2015;
+
+    // d)
+    carro.cor = "Preto";
+
+    // e)
+    carro.getIdade = function(){
+        return 2024 - carro.anoFabricacao;
+    }
+
+    // f)
+    carro.getDescricao = function(){
+        return 'O carro marca "' + carro.marca + '", modelo "' + carro.modelo + '", foi fabricado em ' + carro.anoFabricacao + ' e é da cor "' + carro.cor + '".';
+    }
+
+    return carro;
+}
+
+module.exports = manipulacaoCarro;

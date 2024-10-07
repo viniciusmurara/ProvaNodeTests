@@ -38,3 +38,42 @@
  * analisaArray([]) deve retornar null
  * analisaArray([2, 'a', 4]) deve retornar null
  */
+
+
+function analisaArray(array){
+    let verificaNum = true;
+    array.forEach(element => {
+        if(!Number.isInteger(element)){
+            verificaNum = false;
+        }
+    });
+
+    const obj = {};
+    let contadorPares = 0;
+    let contadorImpares = 0;
+    let pares = [];
+    let impares = [];
+
+    if(array.length === 0 || !verificaNum){
+        return null;
+    } else{
+        array.forEach(element => {
+            if(element % 2 == 0){
+                contadorPares++;
+                pares.push(element);
+            } else {
+                contadorImpares++;
+                impares.push(element);
+            }
+        });
+    }
+
+    obj.quantidadePares = contadorPares;
+    obj.numerosPares = pares;
+    obj.quantidadeImpares = contadorImpares;
+    obj.numerosImpares = impares;
+
+    return obj;
+}
+
+module.exports = analisaArray;

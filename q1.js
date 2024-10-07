@@ -17,3 +17,10 @@
  * maiorNumero(7.5, 2, 3) deve retornar null
  * maiorNumero(1, 'a', 3) deve retornar null
  */
+
+function maiorNumero(a, b, c){
+    if((typeof a) === "number" || )
+    return Math.max(a, b, c);
+}
+
+console.log(maiorNumero(10, 2, 20));

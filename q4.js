@@ -16,3 +16,21 @@
  * somaMultiplos(10) deve retornar 23 (3 + 5 + 6 + 9).
  * somaMultiplos(1000) deve calcular a soma de todos os múltiplos de 3 ou 5 abaixo de 1000.
  */
+
+function somaMultiplos(num){
+    let soma = 0;
+    if (Number.isInteger(num) && num > 0) {
+        for(let i = 0; i < num; i++){
+            if(i % 3 == 0){
+                soma += i;
+            } else if(i % 5 == 0){
+                soma += i;
+            }
+        }
+    } else{
+        return null;
+    }
+    return soma;
+}
+
+module.exports = somaMultiplos;

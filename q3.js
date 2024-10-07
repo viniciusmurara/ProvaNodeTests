@@ -20,3 +20,14 @@
  * Exportação:
  * Certifique-se de exportar a função calculaIMC para ser testada corretamente.
  */
+
+function calculaIMC(peso, altura) {
+    if (typeof peso !== 'number' || typeof altura !== 'number' || peso <= 0 || altura <= 0) {
+        return null;
+    }
+    
+    let imc = peso / (altura * altura);
+    return Math.round(imc * 10) / 10;
+}
+
+module.exports = calculaIMC;

@@ -28,7 +28,7 @@
  * ]) deve retornar:
  * {
  *   totalGasto: 26,
- *   itemMaisCaro: { nome: "Leite", precoTotal: 9 },
+ *   itemMaisCaro: { nome: "Arroz", precoTotal: 10 },
  *   listaItens: ["Arroz", "Feijão", "Leite"]
  * }
  *

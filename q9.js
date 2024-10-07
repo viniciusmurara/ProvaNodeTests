@@ -39,3 +39,62 @@
  * Certifique-se de exportar a função controleDeCompras para ser testada corretamente.
  */
 
+function controleDeCompras(array){
+    if(array === null){
+        return null;
+    }
+
+    objRetorno = {};
+
+    // a)
+    let soma = 0;
+    array.forEach(element => {
+        soma += (element.preco * element.quantidade);
+    });
+    objRetorno.totalGasto = soma;
+
+    // b)
+    let itemMaisCaro = {};
+    let valorTotal = 0;
+    array.forEach(element => {
+        if((element.preco * element.quantidade) > valorTotal){
+            valorTotal = (element.preco * element.quantidade);
+            itemMaisCaro.nome = element.nome;
+            itemMaisCaro.precoTotal = valorTotal;
+        }
+    });
+    objRetorno.itemMaisCaro = itemMaisCaro;
+
+    // c)
+    let listaItens = [];
+    array.forEach(element => {
+        listaItens.push(element.nome);
+    });
+    objRetorno.listaItens = listaItens;
+    
+    return objRetorno;
+}
+
+const item1 = {
+    nome: "Arroz",
+    quantidade: 2,
+    preco: 5
+}
+const item2 = {
+    nome: "Feijão",
+    quantidade: 1,
+    preco: 7
+}
+const item3 = {
+    nome: "Leite",
+    quantidade: 3,
+    preco: 3
+}
+let array = [];
+array.push(item1);
+array.push(item2);
+array.push(item3);
+
+let arrayVazio = [];
+
+console.log(controleDeCompras(arrayVazio));

@@ -14,3 +14,20 @@
  * console.log(resultado); // Deve imprimir: [1, 2, 3, 4, 5, 6]
  */
 
+function unirArrays(arr1, arr2) {
+    let novoArray = [];
+
+    for (let i = 0; i < arr1.length; i++) {
+        if (!novoArray.includes(arr1[i])) {
+            novoArray.push(arr1[i]);
+        }
+    }
+    for (let i = 0; i < arr2.length; i++) {
+        if (!novoArray.includes(arr2[i])) {
+            novoArray.push(arr2[i]);
+        }
+    }
+    return novoArray;
+}
+
+module.exports = unirArrays;

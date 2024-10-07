@@ -40,12 +40,18 @@
  */
 
 function controleDeCompras(array){
-    if(array === null){
+    // verificando se é valido
+    if (array.length === 0) {
         return null;
+    }
+    for (let i = 0; i < array.length; i++) {
+        const item = array[i];
+        if (typeof item.nome !== 'string' || item.quantidade <= 0 || item.preco <= 0) {
+            return null;
+        }
     }
 
     objRetorno = {};
-
     // a)
     let soma = 0;
     array.forEach(element => {
@@ -75,26 +81,4 @@ function controleDeCompras(array){
     return objRetorno;
 }
 
-const item1 = {
-    nome: "Arroz",
-    quantidade: 2,
-    preco: 5
-}
-const item2 = {
-    nome: "Feijão",
-    quantidade: 1,
-    preco: 7
-}
-const item3 = {
-    nome: "Leite",
-    quantidade: 3,
-    preco: 3
-}
-let array = [];
-array.push(item1);
-array.push(item2);
-array.push(item3);
-
-let arrayVazio = [];
-
-console.log(controleDeCompras(arrayVazio));
+module.exports = controleDeCompras;

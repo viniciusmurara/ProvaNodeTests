@@ -19,3 +19,32 @@
  * palavraMaisLonga(12345) deve retornar null
  * palavraMaisLonga("") deve retornar ""
  */
+
+function palavraMaisLonga(texto){
+    if(texto === ""){
+        return "";
+    } else if((typeof texto) === "string"){
+        let textoSemPontuacao = texto.replace(/[.,!?:;]/g, "");
+        let arrTexto = textoSemPontuacao.split(" ");
+        
+        let maiorPalavra = 0;
+        let retorno;
+        for(let i = 0; i < arrTexto.length; i++){
+            if(arrTexto[i].length > maiorPalavra){
+                maiorPalavra = arrTexto[i].length;
+                retorno = arrTexto[i];
+            }
+        }
+        return retorno;
+    } else{
+        return null;
+    }
+}
+
+console.log(palavraMaisLonga("O rato roeu a roupa do rei de Roma"));
+console.log(palavraMaisLonga("Nada é impossível!"));
+console.log(palavraMaisLonga("Caminhar, correr, saltar."));
+console.log(palavraMaisLonga(12345));
+console.log(palavraMaisLonga(""));
+
+module.exports = palavraMaisLonga;
